@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Online Streaming</title>
+<link rel="stylesheet" type="text/css" href="./resource/nav.css"/>
+<style>
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
+}
+#submit {
+ background-color: #bbb;
+ padding: .5em;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+ border-radius: 6px;
+ color: #fff;
+ font-family: 'Oswald';
+ font-size: 20px;
+ text-decoration: none;
+ border: none;
+}
+#submit:hover {
+ border: none;
+ background: grey;
+ box-shadow: 0px 0px 1px #777;
+}
+</style>
+</head>
+ 
+<body>
+<div style=text-align:center;font-size:22px>
+<img src="./resource/images/bharat logo.jpg" height=100px width="100px" align="left">
+<b>BHARAT INSTITUTE OF ENGINEERING AND TECHNOLOGY
+<br/>Accredited by NAAC,Accredited by NBA<br/>Approved by AICTE,Affiliated to JNTUH Hyderabad<br/>Ibrahimpatnam-501 510,Hyderabad.</b>
+</div >
+
+<ul>
+<li><a href="logout">Home</a></li>
+  <li><a class="active" href="Streaming.html">OnlineStreaming</a></li>
+  <li><a  href="student.jsp">StudentDetails</a></li>
+  <li><a href="login.jsp">Logout</a></li>
+</ul>
+<br/>
+<div id="container">
+	<video autoplay="true" id="vedioElement" controls>
+	</video>
+</div>
+<br/>
+<div align="center">
+<input type="submit" id ="submit" value="StopVideo" onClick=stop(this)>
+</div>
+<div align="center">
+<audio autoplay="true" id="audioElement" controls>
+	</audio>
+	</div>
+<script>
+var video = document.querySelector("#videoElement");
+var audio=document.querySelector("#audioElement");
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+
+if(navigator.mediaDevices.getUserMedia){
+navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(function (stream) {
+      audio.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+function stop(e) {
+  var stream = video.srcObject;
+  var tracks = stream.getTracks();
+
+  for (var i = 0; i < tracks.length; i++) {
+    var track = tracks[i];
+    track.stop();
+  }
+
+  video.srcObject = null;
+}
+</script>
+</body>
+</html>

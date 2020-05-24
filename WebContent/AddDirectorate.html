@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Directorate</title>
+<link rel="stylesheet" type="text/css" href="./resource/nav.css"/>
+<style>
+#submit {
+ background-color: #bbb;
+ padding: .3em;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 6px;
+ color: #fff;
+ font-family: 'Oswald';
+ font-size: 16px;
+ text-decoration: none;
+ border: none;
+}
+#submit:hover {
+ border: none;
+ background: grey;
+ box-shadow: 0px 0px 1px #777;
+}
+</style>
+</head>
+<body>
+<div style=text-align:center;font-size:22px>
+<img src="./resource/images/bharat logo.jpg" height=100px width="100px" align="left">
+<b>BHARAT INSTITUTE OF ENGINEERING AND TECHNOLOGY
+<br/>Accredited by NAAC,Accredited by NBA<br/>Approved by AICTE,Affiliated to JNTUH Hyderabad<br/>Ibrahimpatnam-501 510,Hyderabad.</b>
+</div >
+
+<ul>
+  	 <li><a class="active" href="AddDirectorate.html">Add Directorate</a></li>
+  	 <li><a href="AddSpoc.html">Add SPOC(college)</a></li>
+  	 <li><a href="admin.jsp">Adminstrator</a></li>
+  	 <li><a href="login.jsp">Logout</a></li>
+  	 <li><a href="logout">Home</a></li>
+</ul>
+<br/>
+<br/>
+
+	
+		<h1 align="center">Add Directorate Details</h1>
+	
+	<div align="center">
+	<br/>
+	<br/>
+	
+	
+	<form action="adir" method="post">
+	<div style="border:thin solid red;width:60%">
+	<br/>
+		<table>
+			<thead></thead>
+			<tbody>
+				<tr>
+				<td>FirstName:</td>
+				<td><input type="text" name="fname" ></td>
+				</tr>
+				<tr>
+				<td>LastName:</td>
+				<td><input type="text" name="lname"></td>
+				</tr>
+				<tr>
+				<td>University:</td>
+				<td><input type="text" name="uni"></td>
+				</tr>
+				<tr>
+				<td>Designation:</td>
+				<td><input type="text" name="deg"></td>
+				</tr>
+				<tr>
+				<td>MobileNumber:</td>
+				<td><input type="tel" name="mbno"></td>
+				</tr>
+				<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email"></td>
+				</tr>
+				<tr>
+				<td>CollegeName:</td>
+				<td><input type="text" name="clgName"></td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+			</tbody>
+		</table>
+		
+		<br/>
+		
+		<div>
+			<h4>Colleges Associated with:</h4>
+			<table>
+				<thead>
+				<tr>
+				<td>First College</td>
+				<td>Second College</td>
+				<td>Third College</td>
+				<td>Fourth College</td>
+				</tr>
+				</thead>
+				<tbody>				
+				<tr>
+					<td><input type="text" name="fisclg"></td>
+					<td><input type="text" name="secclg"></td>
+					<td><input type="text" name="thiclg"></td>
+					<td><input type="text" name="furclg"></td>
+				</tr>
+				<tr>
+				<td>&nbsp;</td>
+				</tr>
+				</tbody>
+			</table>
+		
+		
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		
+		<input type="submit" id="submit" value="Register" class="btn"/>
+		<br/>
+		<br/>
+		</div>
+		</div>
+	</form>
+	</div>
+</body>
+</html>
